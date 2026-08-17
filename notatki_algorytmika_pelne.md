@@ -22,21 +22,18 @@ Struktura danych to sposób organizacji, przechowywania i zarządzania danymi w 
 3. **Schemat blokowy:** Reprezentacja graficzna za pomocą znormalizowanych figur geometrycznych.
 4. **Kod źródłowy:** Zapis w konkretnym języku programowania (np. C++, Python).
 
-**5. Jak można podzielić struktury danych?**
-*   **Liniowe:** Dane ułożone są sekwencyjnie (tablice, listy, stosy, kolejki).
-*   **Nieliniowe:** Dane tworzą relacje hierarchiczne lub sieciowe (drzewa, grafy).
-*   **Statyczne:** Z góry zdefiniowany rozmiar (tradycyjne tablice w C/C++).
-*   **Dynamiczne:** Rozmiar zmienia się w trakcie działania programu (listy wiązane, wektory).
+    ##### Sortowanie Bąbelkowe - Opis słowny
 
-**6. Czym jest analiza algorytmów?**
-To proces określania zasobów (czasu procesora oraz pamięci) niezbędnych do wykonania algorytmu w zależności od rozmiaru danych wejściowych (n). Cel to znalezienie asymptotycznej złożoności obliczeniowej, pozwalającej porównywać wydajność niezależnie od sprzętu.
+    1. **Start:** Algorytm rozpoczyna przeglądanie od samego początku tablicy (lub listy) elementów.
+    2. **Porównywanie sąsiadów:** Wybiera pierwsze dwa sąsiadujące ze sobą elementy i je porównuje.
+    3. **Zamiana miejsc (Swap):** Jeśli pierwszy z nich jest większy od drugiego (czyli są w złej kolejności), algorytm zamienia je miejscami. Jeśli są w dobrej kolejności, zostawia je bez zmian.
+    4. **Przesunięcie:** Następnie algorytm przesuwa się o jedną pozycję do przodu i porównuje kolejną parę sąsiadów (drugi element z trzecim, potem trzeci z czwartym itd.), powtarzając krok 3.
+    5. **Koniec pierwszego przejścia:** Ten proces trwa, aż algorytm dotrze do końca tablicy. Po tym pierwszym pełnym przejściu mamy gwarancję, że **największy element znalazł się na swoim docelowym miejscu** (na samym końcu).
+    6. **Kolejne iteracje:** Algorytm wraca na początek i powtarza cały cykl dla pozostałych elementów. Ponieważ ostatni element jest już na swoim miejscu, w każdym kolejnym przejściu algorytm sprawdza o jeden element mniej.
+    7. **Warunek zakończenia:** Cały proces powtarza się tak długo, aż podczas jednego pełnego przejścia przez listę **nie zostanie wykonana ani jedna zamiana**. Brak zamian jest dla algorytmu sygnałem, że tablica jest już w pełni posortowana i można zakończyć pracę.
 
-**7. Jakie są podstawowe elementy schematów blokowych?**
-*   **Owal:** Początek / Koniec algorytmu.
-*   **Równoległobok:** Blok wejścia / wyjścia (np. wczytanie zmiennej, wypisanie wyniku).
-*   **Prostokąt:** Blok operacyjny (obliczenia, przypisania, np. `x = x + 1`).
-*   **Romb (Decyzyjny):** Instrukcja warunkowa (np. `Czy x > 0?`) – wychodzą z niego co najmniej dwie ścieżki (Tak/Nie).
-
+    ##### Sortowanie Bąbelkowe - Schemat Blokowy
+    
     ```mermaid
         graph TD
         Start([Start]) --> Wejscie[/"Wczytaj tablicę T o rozmiarze N"/]
@@ -60,6 +57,21 @@ To proces określania zasobów (czasu procesora oraz pamięci) niezbędnych do w
         Zamiana --> InkrementacjaJ
         InkrementacjaJ --> PetlaWewnetrzna
     ```
+
+**5. Jak można podzielić struktury danych?**
+*   **Liniowe:** Dane ułożone są sekwencyjnie (tablice, listy, stosy, kolejki).
+*   **Nieliniowe:** Dane tworzą relacje hierarchiczne lub sieciowe (drzewa, grafy).
+*   **Statyczne:** Z góry zdefiniowany rozmiar (tradycyjne tablice w C/C++).
+*   **Dynamiczne:** Rozmiar zmienia się w trakcie działania programu (listy wiązane, wektory).
+
+**6. Czym jest analiza algorytmów?**
+To proces określania zasobów (czasu procesora oraz pamięci) niezbędnych do wykonania algorytmu w zależności od rozmiaru danych wejściowych (n). Cel to znalezienie asymptotycznej złożoności obliczeniowej, pozwalającej porównywać wydajność niezależnie od sprzętu.
+
+**7. Jakie są podstawowe elementy schematów blokowych?**
+*   **Owal:** Początek / Koniec algorytmu.
+*   **Równoległobok:** Blok wejścia / wyjścia (np. wczytanie zmiennej, wypisanie wyniku).
+*   **Prostokąt:** Blok operacyjny (obliczenia, przypisania, np. `x = x + 1`).
+*   **Romb (Decyzyjny):** Instrukcja warunkowa (np. `Czy x > 0?`) – wychodzą z niego co najmniej dwie ścieżki (Tak/Nie).
 
 **8. Wyjaśnij różnicę w podejściu iteracyjnym i rekurencyjnym.**
 *   **Iteracja:** Opiera się na pętlach (`for`, `while`). Instrukcje powtarzane są wielokrotnie, a stan kontrolowany jest przez zmienne.
