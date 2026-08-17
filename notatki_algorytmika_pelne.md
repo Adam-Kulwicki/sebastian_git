@@ -306,3 +306,11 @@ Niezwykle złożony manualny kryptosystem rosyjskiego wywiadu (używany przez ag
 Najstarszy ze zbadanych dwuwymiarowych systemów znakowych wynaleziony przez starożytnych Greków. Zestaw znaków umieszcza się na kwadratowej przestrzeni (najczęściej 5x5 tablicy wielowymiarowej, ze względów pojemnościowych łącząc np. literę I/J).
 *   Zarówno osie poziome, jak i pionowe podlegają etykietowaniu liczbami od 1 do 5.
 *   Aby wysłać zakodowaną komórkę tekstu, rzuca się jej pozycję w postaci złączenia indeksu wiersza z indeksem kolumny. Litera lądująca w układzie współrzędnych [1, 4] przesyłana jest jako int "14". Algorytm ten przyczynił się do powstania późniejszych rozwiązań transmisji kablowej i stukowych szyfrów więziennych.
+
+**53. Jakie są cechy dobrego słowa kluczowego w szyfrach typu GA-DE-RY-PO-LU-KI?**
+Aby klucz w szyfrze opartym na wzajemnym parowaniu liter był skuteczny, musi spełniać kilka rygorystycznych założeń technicznych i praktycznych:
+*   **Unikalność liter (brak powtórzeń):** Żadna litera w całym haśle nie może wystąpić więcej niż jeden raz. Powtórzenia sprawiłyby, że szyfr stałby się niejednoznaczny (jedna litera rzutowałaby na dwie różne).
+*   **Parzysta długość:** Klucz musi idealnie dzielić się na pary. Każda litera musi mieć swojego unikalnego partnera.
+*   **Wysoka zawartość popularnych znaków:** Ponieważ znaki spoza klucza nie są szyfrowane, dobry klucz powinien zawierać litery najczęściej używane w języku polskim (przede wszystkim samogłoski: A, E, I, O, U, Y), aby zakodować jak największą część wiadomości.
+*   **Optymalna długość:** Najlepsze klucze mają od 10 do 14 liter (5 do 7 par). Zbyt krótki klucz (np. 6 liter) zostawia za dużo tekstu jawnego, a zbyt długi trudno ułożyć bez powtarzania liter.
+*   **Mnemotechnika (łatwość zapamiętania):** Szyfry tego typu są szyframi pamięciowymi. Klucz powinien być logiczną frazą lub istniejącym słowem (np. `KO-NI-EC-MA-TU-RY`), aby umożliwić jego bezproblemowe odtworzenie w głowie.
